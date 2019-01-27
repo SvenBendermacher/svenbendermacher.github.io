@@ -1,0 +1,286 @@
+/*=============colors=================*/
+
+:root{
+	--green: #134913;
+	--white: #E6E6E6;
+	--gray:  #333333;
+	--black: #1a1a1a;
+}
+
+/*======================BODY STYLE=====================*/
+
+body{
+	margin: 0;
+	padding: 0;
+	background-color: var(--white);
+}
+
+/*======================NAV STYLE======================*/
+
+nav{
+  grid-area: nav;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  top: 0;
+  background-color: var(--green);
+  text-align: center;
+  margin: 0;
+  display: grid;
+	grid-gap: 0;
+	opacity: 0.9;
+	z-index: 10;
+}
+
+.nav_bar{
+  margin: 0;
+  padding: 0;
+}
+
+.nav_bar>li{
+	display: inline-grid;
+	padding: 0px 1px ;
+}
+
+.nav_bar>li>a{
+  text-decoration: none;
+	display: inline-grid;
+  padding: 11px 5px;
+	color: var(--white);
+	font-family: Arial;
+}
+
+.nav_bar>li>a:hover{
+	background-color: var(--gray);
+}
+
+[aria-controls="menu-list"] {
+  display: none;
+}
+
+.navButton{
+	display: none;
+}
+
+/*=====================CONTENT STYLE==================*/
+
+.content{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "img_slider_area"
+  "text_area"
+  "footer_area"
+}
+
+/*=======================img_slider==================*/
+
+.img_slider{
+  grid-area: img_slider_area;
+  padding-top: 40px;
+	width: 100%;
+	max-width: 144vh;
+	height: 81vh;
+	max-height: 56.25vw;
+	display: grid;
+	grid-template-areas: "buttons";
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mySlides{
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-size: cover;
+}
+
+.textImage{
+	position: absolute;
+	text-align: center;
+	left:50%;
+	transform: translateX(-50%);
+	top: 60px;
+	padding: 5px 10px;
+	background-color: var(--green);
+	opacity: 0.9;
+	font-family: Arial;
+	font-size: 100%;
+	font-weight: bold;
+	color: var(--white);
+}
+
+
+.button-controls-slider{
+	width: 100%;
+	max-width: 144vh;
+	height: 81vh;
+	max-height: 56.25vw;
+	grid-area: buttons;
+	display: grid;
+	position: absolute;
+	grid-template-columns: 16px 1fr 16px 16px 16px 1fr 16px;
+	grid-gap: 8px;
+	top: 40px;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.next-button{
+	cursor:pointer;
+	color: var(--white);
+	font-size: 200%;
+}
+
+.left-button{	  grid-column: 1;}
+.right-button{	grid-column: 7;}
+
+.button-select{
+	position: absolute;
+	padding: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+	bottom: 16px;
+	opacity: 0.7;
+	font-weight: bold;
+	height: 0px;
+	width: 0px;
+}
+
+.button-1{	grid-column: 3;}
+.button-2{	grid-column: 4;}
+.button-3{	grid-column: 5;}
+
+/*========================TEXT STYLE================*/
+
+.text{
+  grid-area: text_area;
+  padding: 0 15% 0 15%;
+	font-family: Arial;
+	color: var(--black);
+}
+
+/*=======================BEZETTING===================*/
+
+.bezetting{
+	padding-top: 50px;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.name{
+	background-color: var(--gray);
+	text-align: center;
+	padding-bottom: 30px;
+	color: var(--white);
+}
+
+.gezicht{
+	width: 100%;
+}
+
+/*=======================AGENDA======================*/
+
+.agenda{
+	padding-top: 50px;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
+}
+
+.agenda>a{
+	grid-column: 1/-1;
+}
+
+.activiteit{
+	background-color: var(--gray);
+	padding: 10px 30px 30px 30px;
+	color: var(--white);
+}
+
+/*=======================FOOTER======================*/
+
+footer{
+  grid-area: footer_area;
+}
+
+/*=================@media minder dan 670px nav_bar===========*/
+@media screen and (max-width:700px) and (min-width:0px) {
+  .nav_bar{
+    order: -1;
+    perspective: 800px;
+		margin-top: 40px;
+  }
+
+  .nav_bar>ul{
+    max-height: 0;
+    overflow: hidden;
+    transform: rotateX(90deg);
+    transition: all 0.3s;
+  }
+
+  .navButton{
+		display: block;
+		position: fixed;
+		height: 40px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+		top: 0px;
+		background-color: var(--green);
+		border-style: none;
+  }
+
+	.navButton:hover{
+		background-color: var(--gray);
+	}
+
+	.menuTextButton{
+		color: var(--white);
+		display: inline-block;
+	}
+
+  .open{
+    width: 40px;
+		height: 40px;
+    padding-right: 10px;
+		color: var(--white);
+  }
+
+  .close{
+    width: 40px;
+		height: 40px;
+    padding-right: 10px;
+		color: var(--white);
+  }
+
+  [aria-controls="menu-list"] {
+    display: flex;
+  }
+
+  [aria-expanded="true"] ~ ul {
+    display: grid;
+		background-color: var(--green);
+    max-height: 500px;
+    transform: rotateX(0);
+  }
+
+	[aria-expanded="false"] ~ ul{
+		display: none;
+	}
+
+
+  [aria-expanded="false"] .close {
+  display: none;
+  }
+
+  [aria-expanded="true"] .open {
+  display: none;
+  }
+
+	.agenda{
+		grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+	}
+}
