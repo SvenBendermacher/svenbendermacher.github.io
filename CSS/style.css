@@ -276,7 +276,7 @@ nav{
 	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 	display: grid;
 	grid-template-columns: 1fr 1fr 60px;
-	grid-template-rows: 40px auto;
+	grid-template-rows: 40px auto auto;
 	grid-gap: 20px;
 	border-radius: 5px;
 }
@@ -304,10 +304,22 @@ nav{
 	color: var(--white);
 	text-decoration: none;
 	align-self: center;
+	font-size: 15px;
 }
 
-.meer_informatie:hover{
+.active, .meer_informatie:hover{
 	background-color: var(--black);
+}
+
+.expand_info{
+	padding: 0 18px;
+  background-color: var(--gray);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row:3;
 }
 
 .meer_activiteiten{
@@ -889,4 +901,35 @@ footer{
 		margin-top: 10px;
 		padding-bottom: 14px;
 	}
+
+	.activiteit{
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto auto;
+		padding: 10px;
+	}
+
+	.meer_informatie{
+		grid-column: 2;
+		grid-row: 1;
+}
+.text{
+  grid-area: text_area;
+  padding: 0 20px 20px 20px;
+	font-family: Arial;
+	color: var(--black);
+}
+.timeline::before {
+	left: 25px;
+}
+
+.timeline-img {
+	left: 25px;
+}
+
+.timeline-content {
+	max-width: 100%;
+	width: auto;
+	margin-left: 35px;
+	left:0;
+}
 }
