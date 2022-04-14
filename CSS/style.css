@@ -1,10 +1,16 @@
 /*=============colors=================*/
 
 :root{
-	--green: #134913;
+	--green: #28511c;
+	--light-green: #c7ddc9;
 	--white: #ffffff;
-	--gray:  #555555;
-	--black: #1a1a1a;
+	--gray:  #23383B;
+	--black: #010101;
+	--dark_gray: #222222;
+	--creme: #f5ece5;
+	--brown: #826e5e;
+	--light-blue: #95b6ba;
+	--blue: #5ba3ab;
 }
 
 /*======================BODY STYLE=====================*/
@@ -37,6 +43,11 @@ nav{
 
 .nav_button{
 	display: none;
+	color: var(--gray);
+}
+
+.nav_button:hover{
+	color: var(--light-blue);
 }
 
 .nav_bar{
@@ -70,6 +81,8 @@ nav{
 .home_name{
 	color: var(--green);
 	opacity: 1;
+	font-size: 20px;
+	padding: 8px;
 }
 
 .nav_links:hover {
@@ -149,6 +162,7 @@ nav{
   grid-template-areas:
   "img_slider_area"
   "text_area"
+	"timeline_area"
   "footer_area"
 }
 
@@ -231,11 +245,25 @@ nav{
 
 .text{
   grid-area: text_area;
-  padding: 0 15% 20px 15%;
+  padding: 10px 20% 20px 20%;
 	font-family: Arial;
 	color: var(--black);
 }
 
+/*====================NEWS=================*/
+
+.news{
+	padding-top: 70px;
+}
+
+.news-item{
+background-color: var(--light-green);
+margin-top: 20px;
+padding: 10px 30px 30px 30px;
+color: var(--black);
+box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+border-radius: 5px;
+}
 /*=======================BEZETTING===================*/
 
 .bezetting{
@@ -250,10 +278,13 @@ nav{
 	text-align: center;
 	padding-bottom: 30px;
 	color: var(--white);
+	border-radius: 5px;
+	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 }
 
 .gezicht{
 	width: 100%;
+	border-radius: 5px 5px 0 0;
 }
 
 /*=======================AGENDA======================*/
@@ -261,7 +292,7 @@ nav{
 .agenda{
 	padding-top: 50px;
 	display: grid;
-	grid-gap: 20px;
+	grid-gap: 0px;
 	grid-template-columns: 1fr;
 }
 
@@ -270,15 +301,21 @@ nav{
 }
 
 .activiteit{
-	background-color: var(--gray);
-	padding: 10px 30px 30px 30px;
-	color: var(--white);
+	background-color: var(--light-blue);
+	padding: 0px 30px 0px 30px;
+	margin-bottom: 20px;
+	color: var(--black);
 	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 	display: grid;
 	grid-template-columns: 1fr 1fr 60px;
 	grid-template-rows: 40px auto auto;
-	grid-gap: 20px;
+	grid-gap: 10px;
 	border-radius: 5px;
+}
+
+.activiteit>h3{
+	grid-column-start:1;
+	grid-column-end: 4;
 }
 
 .datum{
@@ -296,24 +333,26 @@ nav{
 .meer_informatie{
 	grid-column: 3;
 	grid-row: 2;
-	background-color: #444444;
+	background-color: var(--light-blue);
 	padding: 10px;
   text-align: center;
-	border:1px solid var(--white);
+	border:1px solid var(--gray);
 	border-radius: 5px;
-	color: var(--white);
+	color: var(--black);
 	text-decoration: none;
 	align-self: center;
 	font-size: 15px;
+	cursor: pointer;
 }
 
 .active, .meer_informatie:hover{
-	background-color: var(--black);
+	background-color: var(--gray);
+	color: var(--light-blue);
 }
 
 .expand_info{
 	padding: 0 18px;
-  background-color: var(--gray);
+  background-color: var(--light-blue);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
@@ -323,9 +362,9 @@ nav{
 }
 
 .meer_activiteiten{
-	background-color: var(--gray);
+	background-color: var(--light-blue);
 	padding: 10px 0px 10px 0px;
-	color: var(--white);
+	color: var(--gray);
 	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 	width: 100%;
 	display: inline-grid;
@@ -336,7 +375,8 @@ nav{
 }
 
 .meer_activiteiten:hover{
-	background-color: var(--black);
+	background-color: var(--gray);
+	color: var(--light-blue);
 }
 
 /*======================contact======================*/
@@ -469,15 +509,15 @@ label.fcf-label {
 }
 
 .fcf-btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    color: var(--gray);
+    background-color: var(--light-blue);
+    border-color: var(--gray);
 }
 
 .fcf-btn-primary:hover {
-    color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    color: var(--light-blue);
+    background-color: var(--gray);
+    border-color: var(--gray);
 }
 
 .fcf-btn-primary:focus, .fcf-btn-primary.focus {
@@ -511,8 +551,9 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 
 .timeline {
 	position: relative;
-	top:80px;
+	top:0px;
 	overflow: hidden;
+	grid-area: timeline_area;
 }
 
 .timeline::before { /*timeline line*/
@@ -559,8 +600,9 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 	width: 70%;
 	left:12%;
 	padding: 10px 30px;
-	border-radius: 4px;
-	background: var(--white);
+	border-radius: 5px;
+	background: var(--creme);
+	color: var(--dark_gray);
 	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 }
 
@@ -573,7 +615,7 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 	top: 30px;
 	right: -15px;
 	border-width: 10px 0 10px 15px;
-	border-color: transparent transparent transparent var(--green);
+	border-color: transparent transparent transparent var(--brown);
 }
 
 .timeline-img{ /* timeline dots */
@@ -597,6 +639,7 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 	width:100%;
 	position: relative;
 	margin-bottom: 20px;
+	border-radius: 5px 5px 0 0;
 }
 
 .timeline-img-text{
@@ -612,7 +655,7 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 }
 
 .date {
-	background: var(--gray);
+	background: var(--brown);
 	display: inline-block;
 	color: var(--white);
 	padding: 10px;
@@ -621,9 +664,11 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 	top: 0;
 	right: 0;
 	margin-left: 100%;
+	border-radius: 0 5px 0 5px;
 	left:-70px;
 	z-index: 2;
 	text-align: center;
+	font-family: times-new-roman;
 }
 
 @media screen and (max-width: 1000px) {
@@ -779,7 +824,7 @@ footer{
 	overflow-x: visible;
   top: 0;
   right: 0;
-  background-color: #111;
+  background-color: var(--light-blue);
 	display: grid;
 	grid-template-rows: 40px 2fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 40px 40px;
 	grid-template-columns: 40px 80px 80px 80px 40px;
@@ -804,7 +849,9 @@ footer{
 }
 
 .side_links{
-		grid-column: 2;
+		grid-column-start: 2;
+		grid-column-end: 5;
+		text-align: left;
 }
 
 .facebook{
@@ -832,14 +879,14 @@ footer{
 }
 
 .nav_button:hover{
-	color: var(--gray);
+	color: var(--light-blue);
 }
 
 .sidenav>a {
   padding: 8px 5px 8px 5px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: var(--gray);
   display: inline-grid;
   transition: 0.3s;
 }
@@ -858,7 +905,7 @@ footer{
 	grid-row: 1;
 	grid-column-start: 0;
 	grid-column-end: 3;
-	color: #818181;
+	color: var(--gray);
 }
 
 .closebtn:hover{
@@ -870,6 +917,10 @@ footer{
 }
 		footer{
 			grid-template-columns: 5% 1fr 1fr 1fr 5%;
+		}
+
+		.text{
+		  padding: 10px 15% 20px 15%;
 		}
 
 }
@@ -899,7 +950,7 @@ footer{
 	.home_name{
 		font-size: 20px;
 		margin-top: 10px;
-		padding-bottom: 14px;
+		padding-bottom: 18px;
 	}
 
 	.activiteit{
@@ -912,6 +963,12 @@ footer{
 		grid-column: 2;
 		grid-row: 1;
 }
+
+.activiteit>h3{
+	grid-column-start:1;
+	grid-column-end: 2;
+}
+
 .text{
   grid-area: text_area;
   padding: 0 20px 20px 20px;
