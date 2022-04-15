@@ -27,3 +27,15 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-red";
   dots[slideIndex-1].style.backgroundColor = "var(--white)";
 }
+
+//  <div class="content">
+//    <div class="img_slider">
+//       <img class="mySlides" src="..\img\groepsfoto_5.jpeg">
+//	     <img class="mySlides" src="..\img\groepsfoto_7.jpg">
+//        <div class="button-controls-slider">
+//          <div class="left-button next-button" onclick="plusDivs(-1)">&#10094;</div>
+//          <div class="right-button next-button" onclick="plusDivs(1)">&#10095;</div>
+//          <div class="button-select demo button-1" onclick="currentDiv(1)"></div>
+//          <div class="button-select demo button-2" onclick="currentDiv(2)"></div>
+//        </div>
+//      </div>

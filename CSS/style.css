@@ -173,12 +173,14 @@ nav{
 
 .content{
   display: grid;
+	min-height: 100vh;
   grid-gap: 10px;
   grid-template-areas:
   "img_slider_area"
   "text_area"
 	"timeline_area"
-  "footer_area"
+  "footer_area";
+	grid-template-rows: auto auto minmax(1fr,auto) auto;
 }
 
 /*==================Home page===============*/
@@ -250,9 +252,97 @@ nav{
 	align-self: left;
 	font-size: 15px;
 	cursor: pointer;
+	transition: 0.2s;
 }
 
 .more_about_us_home:hover{
+	background-color: var(--gray);
+	color: var(--light-blue);
+}
+
+.media_home{
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto 20px auto 20px auto;
+	margin-top: 60px;
+}
+
+.text_media_home{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.img_media_home{
+	grid-column: 1;
+	grid-row:3;
+	display: grid;
+	grid-template-columns: 1fr 80% 1fr;
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.img_media_home_slider{
+	grid-column: 2;
+}
+
+.mySlides{
+	width: 100%;
+	border-radius: 5px;
+}
+
+.next-button{
+	cursor:pointer;
+	color: var(--white);
+  background-color: var(--light-blue);
+	opacity: 0.5;
+  height: 60px;
+	width: 20px;
+	font-size: 200%;
+  transition: 0.2s;
+	padding: 5px;
+	padding-top: 20px;
+	text-align: center;
+	border-radius: 5px;
+	margin: auto;
+}
+
+.left-button{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.left-button:hover{
+	opacity: 0.8;
+}
+
+.right-button{
+	grid-column: 3;
+	grid-row: 1;
+}
+
+.right-button:hover{
+	opacity: 0.8;
+}
+
+.more_media_home{
+	grid-column: 1;
+	grid-row: 5;
+	background-color: var(--light-blue);
+	padding: 10px;
+  text-align: center;
+	border:1px solid var(--gray);
+	border-radius: 5px;
+	width: 150px;
+	color: var(--black);
+	text-decoration: none;
+	font-size: 15px;
+	cursor: pointer;
+	margin: 0 auto 0 auto;
+	transition: 0.2s;
+}
+
+.more_media_home:hover{
 	background-color: var(--gray);
 	color: var(--light-blue);
 }
@@ -279,82 +369,13 @@ nav{
 		grid-column: 1;
 		grid-row: 4;
 	}
+
+	.img_media_home_slider{
+		grid-column-start: 1;
+		grid-column-end: 4;
+		grid-row: 1;
+	}
 }
-
-/*=======================img_slider==================*/
-
-.img_slider{
-  grid-area: img_slider_area;
-  padding-top: 40px;
-	width: 100%;
-	height: 55vw;
-	display: grid;
-	grid-template-areas: "buttons";
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.mySlides{
-	width: 100%;
-	height: 100%;
-	display: none;
-	background-size: cover;
-}
-
-.button-controls-slider{
-	width: 100%;
-	height: 55vw;
-	grid-area: buttons;
-	display: grid;
-	position: absolute;
-	grid-template-columns: 30px 1fr 16px 16px 16px 1fr 30px;
-	grid-gap: 8px;
-	top: 40px;
-	justify-content: center;
-	align-items: center;
-}
-
-.next-button{
-	cursor:pointer;
-	color: var(--white);
-  background-color: var(--black);
-	opacity: 0.5;
-  height: 60px;
-	width: 20px;
-	font-size: 200%;
-  transition: 0.2s;
-	padding: 5px;
-	padding-top: 20px;
-	text-align: center;
-	border-radius: 5px;
-}
-
-.left-button{	  grid-column: 1;}
-.left-button:hover{
-	opacity: 0.8;
-}
-
-.right-button{	grid-column: 7;}
-.right-button:hover{
-	opacity: 0.8;
-}
-
-.button-select{
-	position: absolute;
-	padding: 8px;
-	border-radius: 8px;
-	cursor: pointer;
-	bottom: 20px;
-	opacity: 0.7;
-	font-weight: bold;
-	height: 0px;
-	width: 0px;
-	transition: 0.2s;
-}
-
-.button-1{	grid-column: 3;}
-.button-2{	grid-column: 4;}
-.button-3{	grid-column: 5;}
 
 /*====================NEWS=================*/
 
@@ -387,6 +408,11 @@ border-radius: 5px;
 	color: var(--white);
 	border-radius: 5px;
 	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+	cursor: pointer;
+}
+
+.name:hover{
+	opacity: 0.7;
 }
 
 .gezicht{
@@ -449,6 +475,7 @@ border-radius: 5px;
 	text-decoration: none;
 	align-self: center;
 	font-size: 15px;
+	transition: 0.2s;
 	cursor: pointer;
 }
 
@@ -479,6 +506,7 @@ border-radius: 5px;
 	text-decoration: none;
 	opacity: 0.7;
 	border-radius: 5px;
+	transition: 0.2s;
 }
 
 .meer_activiteiten:hover{
