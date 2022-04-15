@@ -1,7 +1,7 @@
 /*=============colors=================*/
 
 :root{
-	--white: #ffffff;
+	--white: #95b6ba; /*#95b6ba*/
 	--black: #010101;
 	--dark_gray: #222222;
 	--green: #28511c;
@@ -9,7 +9,7 @@
 	--creme: #f5ece5;
 	--brown: #826e5e;
 	--gray:  #23383B;
-	--light-blue: #95b6ba;
+	--light-blue: #ffffff; /*#ffffff*/
 	--blue: #5ba3ab;
 }
 
