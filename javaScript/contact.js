@@ -1,16 +1,4 @@
 
-function fetchContacttext() {
-    const contacttextReq = new Request('http://MacBook-Air-van-Sven.local:1337/api/contacttext?fields=description');
-    fetch(contacttextReq)
-        .then(response => response.json())
-        .then(contacttext => {
-            let contactText = document.getElementById("contactText");
-            Object.values(contacttext).forEach((contacttext) => {
-                contactText.innerHTML = Object.values(contacttext)[1].description;
-})})};
-
-fetchContacttext();
-
 (function () {
     emailjs.init("xrJFzsvOI7y7drKHq");
 })();
