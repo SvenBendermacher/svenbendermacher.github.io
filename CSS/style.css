@@ -2251,8 +2251,8 @@ body {
   background-color: var(--white);
   width: 100%;
   max-width: 1500px;
-  height: Max(calc(Min(100vh, 1500px) - 80px - (292/693)*1500px + 1px + 200px), calc(Min(100vh, 1500px) - 80px - (292/693)*100vw + 1px + 200px));
-  min-height: Max(calc(800px - 80px - (292/693)*1500px + 1px + 200px), calc(800px - 80px - (292/693)*100vw + 1px + 200px));
+  height: Max(calc(Min(100vh, 1500px) - 80px - (292/693)*1500px + 1px + 300px), calc(Min(100vh, 1500px) - 80px - (292/693)*100vw + 1px + 300px));
+  min-height: Max(calc(800px - 80px - (292/693)*1500px + 1px + 300px), calc(800px - 80px - (292/693)*100vw + 1px + 300px));
   position: absolute;
   z-index: 2;
 }
@@ -2373,7 +2373,7 @@ body {
   width: 100%;
   max-width: 1500px;
   position: absolute;
-  margin-top: Max(calc(Min(100vh, 1500px) - 80px - (292/693)*1500px + 200px), calc(Min(100vh, 1500px) - 80px - (292/693)*100vw + 200px), calc(800px - 80px - (292/693)*100vw + 200px), calc(800px - 80px - (292/693)*1500px + 200px));
+  margin-top: Max(calc(Min(100vh, 1500px) - 80px - (292/693)*1500px + 300px), calc(Min(100vh, 1500px) - 80px - (292/693)*100vw + 300px), calc(800px - 80px - (292/693)*100vw + 300px), calc(800px - 80px - (292/693)*1500px + 300px));
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
