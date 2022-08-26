@@ -157,6 +157,46 @@ body {
   padding: 0px 1px;
 }
 
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  margin-top: 25px;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .nav_links {
   text-decoration: none;
   display: -ms-inline-grid;
@@ -298,8 +338,8 @@ body {
     background-color: var(--creme);
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 40px 2fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 40px 40px;
-        grid-template-rows: 40px 2fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 40px 40px;
+    -ms-grid-rows: 40px 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 40px 40px;
+        grid-template-rows: 40px 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 40px 40px;
     -ms-grid-columns: 40px 1fr 1fr 1fr 40px;
         grid-template-columns: 40px 1fr 1fr 1fr 40px;
     grid-gap: 0;
